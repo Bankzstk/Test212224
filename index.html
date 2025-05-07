@@ -128,38 +128,36 @@
 
 <script>
   document.getElementById('evaluationForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const form = e.target;
-    const selects = form.querySelectorAll('select');
-    const values = Array.from(selects).map(s => s.value);
+  e.preventDefault();
+  const form = e.target;
+  const selects = form.querySelectorAll('select');
+  const values = Array.from(selects).map(s => s.value);
 
-    const payload = {
-      evaluator: values[0],
-      team: values[1],
-      q1: values[2],
-      q2: values[3],
-      q3: values[4],
-      q4: values[5],
-      q5: values[6],
-      q6: values[7],
-      q7: values[8]
-    };
+  const formData = new FormData();
+  formData.append('evaluator', values[0]);
+  formData.append('team', values[1]);
+  formData.append('q1', values[2]);
+  formData.append('q2', values[3]);
+  formData.append('q3', values[4]);
+  formData.append('q4', values[5]);
+  formData.append('q5', values[6]);
+  formData.append('q6', values[7]);
+  formData.append('q7', values[8]);
 
-    fetch('https://script.google.com/macros/s/AKfycbxsP8I-j9B165PNwawQtDc3L_R4R97uNaTwycG2eg_6vPRMxMhy3GePYMgYNNAn5Zs/exec', {
-      method: 'POST',
-      body: JSON.stringify(payload),
-      headers: { 'Content-Type': 'application/json' }
-    })
-    .then(response => response.text())
-    .then(result => {
-      alert('ส่งแบบประเมินเรียบร้อยแล้ว ขอบคุณครับ!');
-      form.reset();
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      alert('เกิดข้อผิดพลาดในการส่ง กรุณาลองใหม่');
-    });
+  fetch('https://script.google.com/macros/s/AKfycbzXuSBxmB_GrbFhysCB5PhOiqk1SfJreXSHLM91hsiYOTaqKe3h_jGPeinPODrQCmbi/exec', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.text())
+  .then(result => {
+    alert('ส่งแบบประเมินเรียบร้อยแล้ว ขอบคุณครับ!');
+    form.reset();
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('เกิดข้อผิดพลาดในการส่ง กรุณาลองใหม่');
   });
+});
 </script>
 </body>
 </html>
