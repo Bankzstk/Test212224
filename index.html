@@ -106,7 +106,7 @@
 
   <form id="evaluationForm">
     <div class="question">
-      <label for="evaluator">1. กรุณากรอกชื่อ - นามสกุล ผู้ทำแบบประเมิน</label>
+      <label for="evaluator">กรุณากรอกชื่อ - นามสกุล ผู้ทำแบบประเมิน</label>
       <select id="evaluator" required>
         <option value="">-- กรุณาเลือกชื่อ --</option>
         <option>กมลนันท์ โสภณพนิช</option>
@@ -128,7 +128,7 @@
     </div>
 
     <div class="question">
-      <label for="team">2. กรุณาเลือกทีมที่ประเมิน</label>
+      <label for="team">กรุณาเลือกทีมที่ประเมิน</label>
       <select id="team" required>
         <option value="">-- กรุณาเลือกทีม --</option>
         <option>FLP17 : Energy Saving</option>
@@ -257,11 +257,38 @@
       form.appendChild(submitBtn);
 
       form.onsubmit = (e) => {
-        e.preventDefault();
-        alert("ส่งข้อมูลเรียบร้อยแล้ว!");
-        form.reset();
-      };
-    };
+  e.preventDefault();
+
+  const body = {
+    evaluator: document.getElementById("evaluator").value,
+    team: document.getElementById("team").value,
+    q3: form.q3.value,
+    q4: form.q4.value,
+    q5: form.q5.value,
+    q6: form.q6.value,
+    q7: form.q7.value,
+    q8: form.q8.value
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbzqokgimYRljCoIyYbRF9VltZDLJXJbynlml4ilIS2zVyygO2JgTXBvBrLmbliVmHyX/exec", {
+    method: "POST",
+    body: JSON.stringify(body),
+    headers: { "Content-Type": "application/json" }
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.result === "success") {
+      alert("ส่งข้อมูลเรียบร้อยแล้ว!");
+      form.reset();
+    } else {
+      alert("เกิดข้อผิดพลาดในการส่งข้อมูล");
+    }
+  })
+  .catch(err => {
+    alert("ส่งข้อมูลไม่สำเร็จ: " + err);
+  });
+};
+
   </script>
 </body>
 </html>
