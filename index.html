@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>การประเมินโครงการเถ้าแก่</title>
 
-  <!-- ฟอนต์ Prompt -->
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -50,7 +49,7 @@
     }
 
     input[type="radio"] {
-      margin-right: 10px;
+      margin-top: 5px;
       accent-color: #e60000;
     }
 
@@ -98,12 +97,6 @@
       label {
         font-size: 14px;
       }
-
-      .question div span {
-        display: block;
-        margin-bottom: 10px;
-        line-height: 1.4;
-      }
     }
   </style>
 </head>
@@ -112,7 +105,6 @@
   <h1>การประเมินโครงการเถ้าแก่เพื่อคัดเลือกทีม ขึ้นนำเสนอ Report out</h1>
 
   <form id="evaluationForm">
-    <!-- Q1 -->
     <div class="question">
       <label for="evaluator">1. กรุณากรอกชื่อ - นามสกุล ผู้ทำแบบประเมิน</label>
       <select id="evaluator" required>
@@ -135,7 +127,6 @@
       </select>
     </div>
 
-    <!-- Q2 -->
     <div class="question">
       <label for="team">2. กรุณาเลือกทีมที่ประเมิน</label>
       <select id="team" required>
@@ -152,7 +143,6 @@
       </select>
     </div>
 
-    <!-- Q3 - Q8 จะสร้างด้วย JavaScript -->
   </form>
 
   <script>
@@ -226,7 +216,6 @@
     window.onload = () => {
       const form = document.getElementById('evaluationForm');
 
-      // เพิ่มคำถามแบบ radio
       questions.forEach(q => {
         const div = document.createElement('div');
         div.className = "question";
@@ -235,7 +224,13 @@
         label.textContent = q.label;
         div.appendChild(label);
 
-        q.options.forEach((opt, i) => {
+        q.options.forEach(opt => {
+          const wrapper = document.createElement('div');
+          wrapper.style.display = "flex";
+          wrapper.style.alignItems = "flex-start";
+          wrapper.style.gap = "10px";
+          wrapper.style.marginBottom = "10px";
+
           const radio = document.createElement('input');
           radio.type = "radio";
           radio.name = q.name;
@@ -244,23 +239,17 @@
 
           const span = document.createElement('span');
           span.textContent = opt;
-          span.style.display = "inline-block";
-          span.style.marginBottom = "8px";
-          span.style.lineHeight = "1.4";
-          span.style.cursor = "pointer";
+          span.style.maxWidth = "90%";
+          span.style.lineHeight = "1.5";
 
-          const wrapper = document.createElement('div');
-          wrapper.style.marginBottom = "8px";
           wrapper.appendChild(radio);
           wrapper.appendChild(span);
-
           div.appendChild(wrapper);
         });
 
         form.appendChild(div);
       });
 
-      // ปุ่ม Submit
       const submitBtn = document.createElement('button');
       submitBtn.textContent = "ส่งแบบประเมิน";
       submitBtn.className = "submit-btn";
