@@ -4,110 +4,110 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>การประเมินโครงการเถ้าแก่</title>
+
+  <!-- ฟอนต์ Prompt -->
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-  body {
-    font-family: "Prompt", sans-serif;
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    background: #f8f8f8;
-    color: #333;
-  }
+    body {
+      font-family: "Prompt", sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background: #f8f8f8;
+      color: #333;
+    }
 
-  h1 {
-    color: #e60000;
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 30px;
-  }
+    h1 {
+      color: #e60000;
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-  .question {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 6px solid #e60000;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    margin-bottom: 20px;
-  }
+    .question {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 6px solid #e60000;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 20px;
+    }
 
-  label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #333;
-  }
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #333;
+    }
 
-  select {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-  }
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
 
-  .question div {
-    margin-top: 8px;
-  }
+    input[type="radio"] {
+      margin-right: 10px;
+      accent-color: #e60000;
+    }
 
-  input[type="radio"] {
-    margin-right: 10px;
-    accent-color: #e60000;
-  }
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: #e60000;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 30px;
+    }
 
-  .submit-btn {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    background: #e60000;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 30px;
-  }
+    .submit-btn:hover {
+      background: #cc0000;
+    }
 
-  .submit-btn:hover {
-    background: #cc0000;
-  }
-</style>
-@media (max-width: 600px) {
-  body {
-    padding: 10px;
-  }
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
 
-  h1 {
-    font-size: 20px;
-  }
+      h1 {
+        font-size: 20px;
+      }
 
-  .question {
-    padding: 15px;
-    font-size: 14px;
-  }
+      .question {
+        padding: 15px;
+        font-size: 14px;
+      }
 
-  select {
-    font-size: 14px;
-    padding: 8px;
-  }
+      select {
+        font-size: 14px;
+        padding: 8px;
+      }
 
-  .submit-btn {
-    font-size: 14px;
-    padding: 10px;
-  }
+      .submit-btn {
+        font-size: 14px;
+        padding: 10px;
+      }
 
-  label {
-    font-size: 14px;
-  }
+      label {
+        font-size: 14px;
+      }
 
-  .question div span {
-    display: block;
-    margin-bottom: 10px;
-    line-height: 1.4;
-  }
-}
-
+      .question div span {
+        display: block;
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <h1>การประเมินโครงการเถ้าแก่เพื่อคัดเลือกทีม ขึ้นนำเสนอ Report out</h1>
 
@@ -152,124 +152,127 @@
       </select>
     </div>
 
-    <!-- Q3 - Q8 -->
-    <script>
-      const questions = [
-        {
-          label: "3. ความสำเร็จในผลลัพธ์รายได้/กำไรสุทธิเทียบกับเป้าหมายโครงการ",
-          name: "q3",
-          options: [
-            "คะแนน 1: ลดลงจากเดือนก่อนหน้าค่อนข้างมาก ไม่เป็นไปตามเป้าหมายโครงการ",
-            "คะแนน 2: มีการเปลี่ยนแปลงเพิ่มขึ้นหรือลดลงเล็กน้อย ไม่เป็นไปตามเป้าหมายโครงการ",
-            "คะแนน 3: เพิ่มขึ้นอย่างต่อเนื่อง มีโอกาสเป็นไปตามเป้าหมายโครงการ",
-            "คะแนน 4: เพิ่มขึ้นอย่างต่อเนื่อง แสดงการเติบโต และบรรลุเป้าหมายโครงการ",
-            "คะแนน 5: เพิ่มขึ้นอย่างก้าวกระโดด และสูงกว่าเป้าหมายโครงการ"
-          ]
-        },
-        {
-          label: "4. มีการวิเคราะห์คู่แข่ง วิเคราะห์กลุ่มเป้าหมาย ฟังเสียงลูกค้า และโอกาสทางการตลาด",
-          name: "q4",
-          options: [
-            "คะแนน 1 : ไม่มีการวิเคราะห์ถึงข้อมูลดังกล่าว",
-            "คะแนน 2 : มีการวิเคราะห์ข้อมูลแค่บางส่วน แต่ไม่มีการชี้จุดแข็ง หรือจุดอ่อน",
-            "คะแนน 3 : มีการวิเคราะห์ข้อมูล ชี้จุดแข็ง หรือจุดอ่อนบางส่วน และเชื่อมโยงไปสู่กลยุทธ์",
-            "คะแนน 4 : มีการวิเคราะห์ข้อมูลครบถ้วน ชี้จุดแข็ง หรือจุดอ่อน และเชื่อมโยงไปสู่กลยุทธ์",
-            "คะแนน 5 : มีการวิเคราะห์ข้อมูลครบถ้วน ชี้จุดแข็ง หรือจุดอ่อน และเชื่อมโยงไปสู่กลยุทธ์เพื่อเปลี่ยนเลนแซง"
-          ]
-        },
-        {
-          label: "5. กลยุทธ์ หรือทีเด็ด ที่มีผลต่อเป้าหมายโครงการ และนำไปสู่การขยายผล",
-          name: "q5",
-          options: [
-            "คะแนน 1: ไม่มีกลยุทธ์ หรือทีเด็ด",
-            "คะแนน 2: มีกลยุทธ์ หรือทีเด็ด แต่ยังไม่มีผลลัพธ์หรือมีเพียงเล็กน้อย",
-            "คะแนน 3: มีกลยุทธ์ หรือทีเด็ด และมีผลลัพธ์เป็นไปตามเป้าหมาย",
-            "คะแนน 4: มีกลยุทธ์ หรือทีเด็ด และมีผลลัพธ์เกินเป้าหมาย",
-            "คะแนน 5: มีกลยุทธ์ หรือทีเด็ด ได้ผลลัพธ์เกินเป้าหมาย และนำไปขยายผล"
-          ]
-        },
-        {
-          label: "6. การนำเสนอปัญหาเชิงกลยุทธ์ จากการลงมือทำจริง",
-          name: "q6",
-          options: [
-            "คะแนน 1 : นำเสนอปัญหาน้อยกว่าเกณฑ์ที่กำหนด 4 เรื่อง หรือเป็นปัญหา Operations",
-            "คะแนน 2 : นำเสนอปัญหาครบ แต่ไม่มีผลลัพธ์การแก้ไข",
-            "คะแนน 3  : นำเสนอปัญหาครบ มีการแก้ไข และมีผลลัพธ์เป็นไปตามเป้าหมาย",
-            "คะแนน 4  : นำเสนอปัญหาครบ มีการแก้ไข และมีผลลัพธ์เกินเป้าหมาย",
-            "คะแนน 5  : นำเสนอปัญหาครบ มีการแก้ไข มีผลลัพธ์เกินเป้าหมาย และนำไปขยายผล"
-          ]
-        },
-        {
-          label: "7. กลยุทธ์การผนึกกำลังร่วมกับเครือฯ",
-          name: "q7",
-          options: [
-            "คะแนน 1: ไม่มีแนวคิดการผนึกกำลังกับบริษัทในเครือฯ",
-            "คะแนน 2: มีแนวคิดการผนึกกำลังร่วมกับบริษัทในเครือฯ แต่ยังไม่มีกลยุทธ์ที่ชัดเจน",
-            "คะแนน 3: มีกลยุทธ์การผนึกกำลังร่วมกับบริษัทในเครือฯ และมีผลลัพธ์บางส่วน",
-            "คะแนน 4: มีกลยุทธ์การผนึกกำลังร่วมกับบริษัทในเครือฯ และได้ผลลัพธ์ตามเป้าหมาย",
-            "คะแนน 5: มีกลยุทธ์การผนึกกำลังร่วมกับบริษัทในเครือฯ และได้ผลลัพธ์ได้เกินกว่าเป้าหมาย"
-          ]
-        },
-        {
-          label: "8. ภาพรวมในการนำเสนอมีเนื้อหา รายละเอียด ครบถ้วน และการเล่าเรื่อง สำหรับการรายงานผล Report Out หรือไม่",
-          name: "q8",
-          options: [
-            "ไม่พร้อมในการรายงานผล Report out ต้องกลับไปปรับปรุงแก้ไขในครั้งถัดไป",
-            "ต้องทำการปรับปรุงแก้ไขเพิ่มเติม และกลับมารีวิว กับกรรมการอีกครั้งใน Final Review Session ก่อนการรายงานผล Report Out",
-            "เนื้อหาครบถ้วนสมบูรณ์ พร้อมสำหรับการรายงานผล Report out ทันที"
-          ]
-        }
-      ];
+    <!-- Q3 - Q8 จะสร้างด้วย JavaScript -->
+  </form>
 
-      window.onload = () => {
-        const form = document.getElementById('evaluationForm');
-        const submitBtn = document.createElement('button');
-        submitBtn.textContent = "ส่งแบบประเมิน";
-        submitBtn.className = "submit-btn";
-        submitBtn.type = "submit";
-        form.appendChild(submitBtn);
+  <script>
+    const questions = [
+      {
+        label: "1. ความสำเร็จในผลลัพธ์รายได้/กำไรสุทธิเทียบกับเป้าหมายโครงการ",
+        name: "q3",
+        options: [
+          "คะแนน 1: ลดลงจากเดือนก่อนหน้าค่อนข้างมาก ไม่เป็นไปตามเป้าหมายโครงการ",
+          "คะแนน 2: มีการเปลี่ยนแปลงเพิ่มขึ้นหรือลดลงเล็กน้อย ไม่เป็นไปตามเป้าหมายโครงการ",
+          "คะแนน 3: เพิ่มขึ้นอย่างต่อเนื่อง มีโอกาสเป็นไปตามเป้าหมายโครงการ",
+          "คะแนน 4: เพิ่มขึ้นอย่างต่อเนื่อง แสดงการเติบโต และบรรลุเป้าหมายโครงการ",
+          "คะแนน 5: เพิ่มขึ้นอย่างก้าวกระโดด และสูงกว่าเป้าหมายโครงการ"
+        ]
+      },
+      {
+        label: "2. มีการวิเคราะห์คู่แข่ง วิเคราะห์กลุ่มเป้าหมาย ฟังเสียงลูกค้า และโอกาสทางการตลาด",
+        name: "q4",
+        options: [
+          "คะแนน 1 : ไม่มีการวิเคราะห์ถึงข้อมูลดังกล่าว",
+          "คะแนน 2 : มีการวิเคราะห์ข้อมูลแค่บางส่วน แต่ไม่มีการชี้จุดแข็ง หรือจุดอ่อน",
+          "คะแนน 3 : มีการวิเคราะห์ข้อมูล ชี้จุดแข็ง หรือจุดอ่อนบางส่วน และเชื่อมโยงไปสู่กลยุทธ์",
+          "คะแนน 4 : มีการวิเคราะห์ข้อมูลครบถ้วน ชี้จุดแข็ง หรือจุดอ่อน และเชื่อมโยงไปสู่กลยุทธ์",
+          "คะแนน 5 : มีการวิเคราะห์ข้อมูลครบถ้วน ชี้จุดแข็ง หรือจุดอ่อน และเชื่อมโยงไปสู่กลยุทธ์เพื่อเปลี่ยนเลนแซง"
+        ]
+      },
+      {
+        label: "3. กลยุทธ์ หรือทีเด็ด ที่มีผลต่อเป้าหมายโครงการ และนำไปสู่การขยายผล",
+        name: "q5",
+        options: [
+          "คะแนน 1: ไม่มีกลยุทธ์ หรือทีเด็ด",
+          "คะแนน 2: มีกลยุทธ์ หรือทีเด็ด แต่ยังไม่มีผลลัพธ์หรือมีเพียงเล็กน้อย",
+          "คะแนน 3: มีกลยุทธ์ หรือทีเด็ด และมีผลลัพธ์เป็นไปตามเป้าหมาย",
+          "คะแนน 4: มีกลยุทธ์ หรือทีเด็ด และมีผลลัพธ์เกินเป้าหมาย",
+          "คะแนน 5: มีกลยุทธ์ หรือทีเด็ด ได้ผลลัพธ์เกินเป้าหมาย และนำไปขยายผล"
+        ]
+      },
+      {
+        label: "4. การนำเสนอปัญหาเชิงกลยุทธ์ จากการลงมือทำจริง",
+        name: "q6",
+        options: [
+          "คะแนน 1 : นำเสนอปัญหาน้อยกว่าเกณฑ์ที่กำหนด 4 เรื่อง หรือเป็นปัญหา Operations",
+          "คะแนน 2 : นำเสนอปัญหาครบ แต่ไม่มีผลลัพธ์การแก้ไข",
+          "คะแนน 3  : นำเสนอปัญหาครบ มีการแก้ไข และมีผลลัพธ์เป็นไปตามเป้าหมาย",
+          "คะแนน 4  : นำเสนอปัญหาครบ มีการแก้ไข และมีผลลัพธ์เกินเป้าหมาย",
+          "คะแนน 5  : นำเสนอปัญหาครบ มีการแก้ไข มีผลลัพธ์เกินเป้าหมาย และนำไปขยายผล"
+        ]
+      },
+      {
+        label: "5. กลยุทธ์การผนึกกำลังร่วมกับเครือฯ",
+        name: "q7",
+        options: [
+          "คะแนน 1: ไม่มีแนวคิดการผนึกกำลังกับบริษัทในเครือฯ",
+          "คะแนน 2: มีแนวคิดการผนึกกำลังร่วมกับบริษัทในเครือฯ แต่ยังไม่มีกลยุทธ์ที่ชัดเจน",
+          "คะแนน 3: มีกลยุทธ์การผนึกกำลังร่วมกับบริษัทในเครือฯ และมีผลลัพธ์บางส่วน",
+          "คะแนน 4: มีกลยุทธ์การผนึกกำลังร่วมกับบริษัทในเครือฯ และได้ผลลัพธ์ตามเป้าหมาย",
+          "คะแนน 5: มีกลยุทธ์การผนึกกำลังร่วมกับบริษัทในเครือฯ และได้ผลลัพธ์ได้เกินกว่าเป้าหมาย"
+        ]
+      },
+      {
+        label: "6. ภาพรวมในการนำเสนอมีเนื้อหา รายละเอียด ครบถ้วน และการเล่าเรื่อง สำหรับการรายงานผล Report Out หรือไม่",
+        name: "q8",
+        options: [
+          "ไม่พร้อมในการรายงานผล Report out ต้องกลับไปปรับปรุงแก้ไขในครั้งถัดไป",
+          "ต้องทำการปรับปรุงแก้ไขเพิ่มเติม และกลับมารีวิว กับกรรมการอีกครั้งใน Final Review Session ก่อนการรายงานผล Report Out",
+          "เนื้อหาครบถ้วนสมบูรณ์ พร้อมสำหรับการรายงานผล Report out ทันที"
+        ]
+      }
+    ];
 
-        questions.forEach(q => {
-          const div = document.createElement('div');
-          div.className = "question";
+    window.onload = () => {
+      const form = document.getElementById('evaluationForm');
 
-          const label = document.createElement('label');
-          label.textContent = q.label;
-          div.appendChild(label);
+      // เพิ่มคำถามแบบ radio
+      questions.forEach(q => {
+        const div = document.createElement('div');
+        div.className = "question";
 
-          q.options.forEach((opt, i) => {
-            const radio = document.createElement('input');
-            radio.type = "radio";
-            radio.name = q.name;
-            radio.value = opt;
-            radio.required = true;
+        const label = document.createElement('label');
+        label.textContent = q.label;
+        div.appendChild(label);
 
-            const span = document.createElement('span');
-            span.textContent = opt;
-            span.style.display = "inline-block";
-            span.style.marginBottom = "8px";
-            span.style.lineHeight = "1.4";
-            span.style.cursor = "pointer";
+        q.options.forEach((opt, i) => {
+          const radio = document.createElement('input');
+          radio.type = "radio";
+          radio.name = q.name;
+          radio.value = opt;
+          radio.required = true;
 
-            const wrapper = document.createElement('div');
-            wrapper.style.marginBottom = "8px";
-            wrapper.appendChild(radio);
-            wrapper.appendChild(span);
+          const span = document.createElement('span');
+          span.textContent = opt;
+          span.style.display = "inline-block";
+          span.style.marginBottom = "8px";
+          span.style.lineHeight = "1.4";
+          span.style.cursor = "pointer";
+
+          const wrapper = document.createElement('div');
+          wrapper.style.marginBottom = "8px";
+          wrapper.appendChild(radio);
+          wrapper.appendChild(span);
 
           div.appendChild(wrapper);
         });
 
+        form.appendChild(div);
+      });
 
-          form.appendChild(div);
-        });
+      // ปุ่ม Submit
+      const submitBtn = document.createElement('button');
+      submitBtn.textContent = "ส่งแบบประเมิน";
+      submitBtn.className = "submit-btn";
+      submitBtn.type = "submit";
+      form.appendChild(submitBtn);
 
-        form.onsubmit = (e) => {
-          e.preventDefault();
-          alert("ส่งข้อมูลเรียบร้อยแล้ว!");
-          form.reset();
-        };
+      form.onsubmit = (e) => {
+        e.preventDefault();
+        alert("ส่งข้อมูลเรียบร้อยแล้ว!");
+        form.reset();
       };
-    </script>
-  </form>
+    };
+  </script>
 </body>
 </html>
