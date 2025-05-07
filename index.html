@@ -273,13 +273,14 @@
           q8: form.q8.value
         };
 
-        fetch("https://script.google.com/macros/s/AKfycbwTDvk_LUdxr7s8rq9tSJoUi6o1jML2yRxCLYNz98qje2hc_vCcYWZPFVLBX7b0kevH/exec", {
-  method: "POST",
-  body: JSON.stringify(body),
-  headers: {
-    "Content-Type": "application/json"
-  }
-})
+          fetch("https://script.google.com/macros/s/AKfycbwTDvk_LUdxr7s8rq9tSJoUi6o1jML2yRxCLYNz98qje2hc_vCcYWZPFVLBX7b0kevH/exec", {
+            method: "POST",
+            body: JSON.stringify(body),
+            headers: {
+              "Content-Type": "application/json"
+          }
+        })
+
         .then(res => res.json())
         .then(data => {
           if (data.result === "success") {
