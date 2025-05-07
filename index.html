@@ -3,161 +3,191 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>การประเมินโครงการเถ้าแก่เพื่อคัดเลือกทีม</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+  <title>การประเมินโครงการเถ้าแก่</title>
   <style>
     body {
-      font-family: 'Prompt', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    .container {
+      font-family: sans-serif;
       max-width: 800px;
+      margin: auto;
+      padding: 20px;
     }
-    .required::after {
-      content: '*';
-      color: red;
-      margin-left: 4px;
+    h1 {
+      color: darkgreen;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    select, input[type="radio"] {
+      margin-top: 5px;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .submit-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
     }
   </style>
 </head>
-<body class="p-4">
-  <div class="container">
-    <h2 class="mb-4 text-primary">แบบสอบถาม: การประเมินโครงการเถ้าแก่เพื่อคัดเลือกทีม ขึ้นนำเสนอ Report out</h2>
-    <form id="evaluationForm">
-      <div class="mb-3">
-        <label class="form-label required">1. กรุณากรอกชื่อ - นามสกุล ผู้ทำแบบประเมิน</label>
-        <select class="form-select" required>
-          <option value="">-- กรุณาเลือกชื่อ --</option>
-          <option>กมลนันท์ โสภณพนิช</option>
-          <option>คชา ใจงาม</option>
-          <option>ธนูเพ็ชร ลืออำรุง</option>
-          <option>ธวัชชัย รังษีหิรัญรัตน์</option>
-          <option>นนท์ อิงคุทานนท์</option>
-          <option>นพฤทธิ์ ต้องประสิทธิ์</option>
-          <option>นฤมล พัฒนการุณย์วงศ์</option>
-          <option>นาราดา พิชญนิธิกุล</option>
-          <option>พีรณัฐ อีศพงศ์</option>
-          <option>วรญา มาประชา</option>
-          <option>วีรดา ชัยกิตติรัตนา</option>
-          <option>ศักดิ์ชัย ผดุงพัฒโนดม</option>
-          <option>สุมลรัตน์ ตั้งใจจิต</option>
-          <option>หทัยภัทร สุคนธราช</option>
-          <option>อิรวัจน์ สนิทพันธ์</option>
-        </select>
-      </div>
+<body>
+  <h1>การประเมินโครงการเถ้าแก่เพื่อคัดเลือกทีม ขึ้นนำเสนอ Report out</h1>
 
-      <div class="mb-3">
-        <label class="form-label required">2. กรุณาเลือกทีมที่ประเมิน</label>
-        <select class="form-select" required>
-          <option value="">-- กรุณาเลือกทีม --</option>
-          <option>FLP17 : Energy Saving</option>
-          <option>FLP17 : TrueID</option>
-          <option>FLP17 : TrueX</option>
-          <option>FLP17 : Win The House with Smart Living</option>
-          <option>PLP8 : B2B HORECA</option>
-          <option>PLP8 : B2B Smart Solution</option>
-          <option>PLP8 : B2C Smart Device</option>
-          <option>LDP : Increase Revenue Growth with Smart Solutions & Products</option>
-          <option>LDP Shadow : TrueX #2</option>
-        </select>
-      </div>
+  <form id="evaluationForm">
+    <!-- Q1 -->
+    <div class="question">
+      <label for="evaluator">1. กรุณากรอกชื่อ - นามสกุล ผู้ทำแบบประเมิน</label>
+      <select id="evaluator" required>
+        <option value="">-- กรุณาเลือกชื่อ --</option>
+        <option>กมลนันท์ โสภณพนิช</option>
+        <option>คชา ใจงาม</option>
+        <option>ธนูเพ็ชร ลืออำรุง</option>
+        <option>ธวัชชัย รังษีหิรัญรัตน์</option>
+        <option>นนท์  อิงคุทานนท์</option>
+        <option>นพฤทธิ์ ต้องประสิทธิ์</option>
+        <option>นฤมล พัฒนการุณย์วงศ์</option>
+        <option>นาราดา พิชญนิธิกุล</option>
+        <option>พีรณัฐ อีศพงศ์</option>
+        <option>วรญา มาประชา</option>
+        <option>วีรดา ชัยกิตติรัตนา</option>
+        <option>ศักดิ์ชัย ผดุงพัฒโนดม</option>
+        <option>สุมลรัตน์ ตั้งใจจิต</option>
+        <option>หทัยภัทร สุคนธราช</option>
+        <option>อิรวัจน์ สนิทพันธ์</option>
+      </select>
+    </div>
 
-      <div class="mb-3">
-        <label class="form-label required">3. ความสำเร็จในผลลัพธ์รายได้/กำไรสุทธิเทียบกับเป้าหมายโครงการ</label>
-        <select class="form-select" required>
-          <option value="">-- กรุณาเลือกคะแนน --</option>
-          <option>1: ลดลงจากเดือนก่อนหน้าค่อนข้างมาก ไม่เป็นไปตามเป้าหมายโครงการ</option>
-          <option>2: มีการเปลี่ยนแปลงเพิ่มขึ้นหรือลดลงเล็กน้อย ไม่เป็นไปตามเป้าหมายโครงการ</option>
-          <option>3: เพิ่มขึ้นอย่างต่อเนื่อง มีโอกาสเป็นไปตามเป้าหมายโครงการ</option>
-          <option>4: เพิ่มขึ้นอย่างต่อเนื่อง แสดงการเติบโต และบรรลุเป้าหมายโครงการ</option>
-          <option>5: เพิ่มขึ้นอย่างก้าวกระโดด และสูงกว่าเป้าหมายโครงการ</option>
-        </select>
-      </div>
+    <!-- Q2 -->
+    <div class="question">
+      <label for="team">2. กรุณาเลือกทีมที่ประเมิน</label>
+      <select id="team" required>
+        <option value="">-- กรุณาเลือกทีม --</option>
+        <option>FLP17 : Energy Saving</option>
+        <option>FLP17 : TrueID</option>
+        <option>FLP17 : TrueX</option>
+        <option>FLP17 : Win The House with Smart Living</option>
+        <option>PLP8 : B2B HORECA</option>
+        <option>PLP8 : B2B Smart Solution</option>
+        <option>PLP8 : B2C Smart Device</option>
+        <option>LDP : Increase Revenue Growth with Smart Solutions & Products</option>
+        <option>LDP Shadow : TrueX #2</option>
+      </select>
+    </div>
 
-      <div class="mb-3">
-        <label class="form-label required">4. การวิเคราะห์คู่แข่ง วิเคราะห์กลุ่มเป้าหมาย ฟังเสียงลูกค้า และโอกาสทางการตลาด</label>
-        <select class="form-select" required>
-          <option value="">-- กรุณาเลือกคะแนน --</option>
-          <option>1: ไม่มีการวิเคราะห์ถึงข้อมูลดังกล่าว</option>
-          <option>2: วิเคราะห์ข้อมูลบางส่วน ไม่มีการชี้จุดแข็ง/อ่อน</option>
-          <option>3: วิเคราะห์บางส่วนและเชื่อมโยงกลยุทธ์</option>
-          <option>4: วิเคราะห์ครบถ้วน ชี้จุดแข็ง/อ่อน และเชื่อมโยงกลยุทธ์</option>
-          <option>5: วิเคราะห์ครบถ้วน และเชื่อมโยงกลยุทธ์เพื่อเปลี่ยนเลนแซง</option>
-        </select>
-      </div>
+    <!-- Q3 - Q8 -->
+    <script>
+      const questions = [
+        {
+          label: "3. ความสำเร็จในผลลัพธ์รายได้/กำไรสุทธิเทียบกับเป้าหมายโครงการ",
+          name: "q3",
+          options: [
+            "คะแนน 1: ลดลงจากเดือนก่อนหน้าค่อนข้างมาก ไม่เป็นไปตามเป้าหมายโครงการ",
+            "คะแนน 2: มีการเปลี่ยนแปลงเพิ่มขึ้นหรือลดลงเล็กน้อย ไม่เป็นไปตามเป้าหมายโครงการ",
+            "คะแนน 3: เพิ่มขึ้นอย่างต่อเนื่อง มีโอกาสเป็นไปตามเป้าหมายโครงการ",
+            "คะแนน 4: เพิ่มขึ้นอย่างต่อเนื่อง แสดงการเติบโต และบรรลุเป้าหมายโครงการ",
+            "คะแนน 5: เพิ่มขึ้นอย่างก้าวกระโดด และสูงกว่าเป้าหมายโครงการ"
+          ]
+        },
+        {
+          label: "4. มีการวิเคราะห์คู่แข่ง วิเคราะห์กลุ่มเป้าหมาย ฟังเสียงลูกค้า และโอกาสทางการตลาด",
+          name: "q4",
+          options: [
+            "คะแนน 1 : ไม่มีการวิเคราะห์ถึงข้อมูลดังกล่าว",
+            "คะแนน 2 : มีการวิเคราะห์ข้อมูลแค่บางส่วน แต่ไม่มีการชี้จุดแข็ง หรือจุดอ่อน",
+            "คะแนน 3 : มีการวิเคราะห์ข้อมูล ชี้จุดแข็ง หรือจุดอ่อนบางส่วน และเชื่อมโยงไปสู่กลยุทธ์",
+            "คะแนน 4 : มีการวิเคราะห์ข้อมูลครบถ้วน ชี้จุดแข็ง หรือจุดอ่อน และเชื่อมโยงไปสู่กลยุทธ์",
+            "คะแนน 5 : มีการวิเคราะห์ข้อมูลครบถ้วน ชี้จุดแข็ง หรือจุดอ่อน และเชื่อมโยงไปสู่กลยุทธ์เพื่อเปลี่ยนเลนแซง"
+          ]
+        },
+        {
+          label: "5. กลยุทธ์ หรือทีเด็ด ที่มีผลต่อเป้าหมายโครงการ และนำไปสู่การขยายผล",
+          name: "q5",
+          options: [
+            "คะแนน 1: ไม่มีกลยุทธ์ หรือทีเด็ด",
+            "คะแนน 2: มีกลยุทธ์ หรือทีเด็ด แต่ยังไม่มีผลลัพธ์หรือมีเพียงเล็กน้อย",
+            "คะแนน 3: มีกลยุทธ์ หรือทีเด็ด และมีผลลัพธ์เป็นไปตามเป้าหมาย",
+            "คะแนน 4: มีกลยุทธ์ หรือทีเด็ด และมีผลลัพธ์เกินเป้าหมาย",
+            "คะแนน 5: มีกลยุทธ์ หรือทีเด็ด ได้ผลลัพธ์เกินเป้าหมาย และนำไปขยายผล"
+          ]
+        },
+        {
+          label: "6. การนำเสนอปัญหาเชิงกลยุทธ์ จากการลงมือทำจริง",
+          name: "q6",
+          options: [
+            "คะแนน 1 : นำเสนอปัญหาน้อยกว่าเกณฑ์ที่กำหนด 4 เรื่อง หรือเป็นปัญหา Operations",
+            "คะแนน 2 : นำเสนอปัญหาครบ แต่ไม่มีผลลัพธ์การแก้ไข",
+            "คะแนน 3  : นำเสนอปัญหาครบ มีการแก้ไข และมีผลลัพธ์เป็นไปตามเป้าหมาย",
+            "คะแนน 4  : นำเสนอปัญหาครบ มีการแก้ไข และมีผลลัพธ์เกินเป้าหมาย",
+            "คะแนน 5  : นำเสนอปัญหาครบ มีการแก้ไข มีผลลัพธ์เกินเป้าหมาย และนำไปขยายผล"
+          ]
+        },
+        {
+          label: "7. กลยุทธ์การผนึกกำลังร่วมกับเครือฯ",
+          name: "q7",
+          options: [
+            "คะแนน 1: ไม่มีแนวคิดการผนึกกำลังกับบริษัทในเครือฯ",
+            "คะแนน 2: มีแนวคิดการผนึกกำลังร่วมกับบริษัทในเครือฯ แต่ยังไม่มีกลยุทธ์ที่ชัดเจน",
+            "คะแนน 3: มีกลยุทธ์การผนึกกำลังร่วมกับบริษัทในเครือฯ และมีผลลัพธ์บางส่วน",
+            "คะแนน 4: มีกลยุทธ์การผนึกกำลังร่วมกับบริษัทในเครือฯ และได้ผลลัพธ์ตามเป้าหมาย",
+            "คะแนน 5: มีกลยุทธ์การผนึกกำลังร่วมกับบริษัทในเครือฯ และได้ผลลัพธ์ได้เกินกว่าเป้าหมาย"
+          ]
+        },
+        {
+          label: "8. ภาพรวมในการนำเสนอมีเนื้อหา รายละเอียด ครบถ้วน และการเล่าเรื่อง สำหรับการรายงานผล Report Out หรือไม่",
+          name: "q8",
+          options: [
+            "ไม่พร้อมในการรายงานผล Report out ต้องกลับไปปรับปรุงแก้ไขในครั้งถัดไป",
+            "ต้องทำการปรับปรุงแก้ไขเพิ่มเติม และกลับมารีวิว กับกรรมการอีกครั้งใน Final Review Session ก่อนการรายงานผล Report Out",
+            "เนื้อหาครบถ้วนสมบูรณ์ พร้อมสำหรับการรายงานผล Report out ทันที"
+          ]
+        }
+      ];
 
-      <div class="mb-3">
-        <label class="form-label required">5. กลยุทธ์ หรือทีเด็ด ที่มีผลต่อเป้าหมายโครงการ และนำไปสู่การขยายผล</label>
-        <select class="form-select" required>
-          <option value="">-- กรุณาเลือกคะแนน --</option>
-          <option>1: ไม่มีกลยุทธ์ หรือทีเด็ด</option>
-          <option>2: มีกลยุทธ์/ทีเด็ด แต่ยังไม่มีผลลัพธ์</option>
-          <option>3: มีกลยุทธ์/ทีเด็ด และมีผลลัพธ์ตามเป้าหมาย</option>
-          <option>4: มีกลยุทธ์/ทีเด็ด และมีผลลัพธ์เกินเป้าหมาย</option>
-          <option>5: มีกลยุทธ์/ทีเด็ด ได้ผลลัพธ์เกินเป้าหมาย และขยายผล</option>
-        </select>
-      </div>
+      window.onload = () => {
+        const form = document.getElementById('evaluationForm');
+        const submitBtn = document.createElement('button');
+        submitBtn.textContent = "ส่งแบบประเมิน";
+        submitBtn.className = "submit-btn";
+        submitBtn.type = "submit";
+        form.appendChild(submitBtn);
 
-      <div class="mb-3">
-        <label class="form-label required">6. การนำเสนอปัญหาเชิงกลยุทธ์ จากการลงมือทำจริง</label>
-        <select class="form-select" required>
-          <option value="">-- กรุณาเลือกคะแนน --</option>
-          <option>1: ปัญหาน้อยกว่าเกณฑ์ หรือเป็นปัญหา Operations</option>
-          <option>2: ปัญหาครบ แต่ไม่มีผลลัพธ์การแก้ไข</option>
-          <option>3: ปัญหาครบ มีการแก้ไข และมีผลลัพธ์เป็นไปตามเป้าหมาย</option>
-          <option>4: ปัญหาครบ มีการแก้ไข และมีผลลัพธ์เกินเป้าหมาย</option>
-          <option>5: ปัญหาครบ มีการแก้ไข มีผลลัพธ์เกินเป้าหมาย และนำไปขยายผล</option>
-        </select>
-      </div>
+        questions.forEach(q => {
+          const div = document.createElement('div');
+          div.className = "question";
 
-      <div class="mb-4">
-        <label class="form-label required">7. ภาพรวมในการนำเสนอ รายละเอียดครบถ้วน พร้อมสำหรับรายงานผล Report Out หรือไม่</label>
-        <select class="form-select" required>
-          <option value="">-- กรุณาเลือก --</option>
-          <option>ไม่พร้อม ต้องปรับปรุงในครั้งถัดไป</option>
-          <option>ต้องทำการปรับปรุงและกลับมารีวิวอีกครั้งใน Final Review</option>
-          <option>เนื้อหาครบถ้วนสมบูรณ์ พร้อมสำหรับการรายงานผล Report Out</option>
-        </select>
-      </div>
+          const label = document.createElement('label');
+          label.textContent = q.label;
+          div.appendChild(label);
 
-      <button type="submit" class="btn btn-primary">ส่งแบบประเมิน</button>
-    </form>
-  </div>
+          q.options.forEach((opt, i) => {
+            const radio = document.createElement('input');
+            radio.type = "radio";
+            radio.name = q.name;
+            radio.value = opt;
+            radio.required = true;
 
-<script>
-  document.getElementById('evaluationForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const form = e.target;
-    const selects = form.querySelectorAll('select');
-    const values = Array.from(selects).map(s => s.value);
+            const span = document.createElement('span');
+            span.textContent = opt;
 
-    const formData = new FormData();
-    formData.append('evaluator', values[0]);
-    formData.append('team', values[1]);
-    formData.append('q1', values[2]);
-    formData.append('q2', values[3]);
-    formData.append('q3', values[4]);
-    formData.append('q4', values[5]);
-    formData.append('q5', values[6]);
-    formData.append('q6', values[7]);
-    formData.append('q7', values[8]);
+            const wrapper = document.createElement('div');
+            wrapper.appendChild(radio);
+            wrapper.appendChild(span);
 
-    fetch('https://script.google.com/macros/s/AKfycbzXuSBxmB_GrbFhysCB5PhOiqk1SfJreXSHLM91hsiYOTaqKe3h_jGPeinPODrQCmbi/exec', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => response.text())
-    .then(result => {
-      alert('ส่งแบบประเมินเรียบร้อยแล้ว ขอบคุณครับ!');
-      form.reset();
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      alert('เกิดข้อผิดพลาดในการส่ง กรุณาลองใหม่');
-    });
-  });
-</script>
+            div.appendChild(wrapper);
+          });
+
+          form.appendChild(div);
+        });
+
+        form.onsubmit = (e) => {
+          e.preventDefault();
+          alert("ส่งข้อมูลเรียบร้อยแล้ว!");
+          form.reset();
+        };
+      };
+    </script>
+  </form>
 </body>
 </html>
