@@ -126,40 +126,40 @@
     </form>
   </div>
 
-  <script>
-    document.getElementById('evaluationForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const selects = form.querySelectorAll('select');
-      const values = Array.from(selects).map(s => s.value);
+<script>
+  document.getElementById('evaluationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const selects = form.querySelectorAll('select');
+    const values = Array.from(selects).map(s => s.value);
 
-      const payload = {
-        evaluator: values[0],
-        team: values[1],
-        q1: values[2],
-        q2: values[3],
-        q3: values[4],
-        q4: values[5],
-        q5: values[6],
-        q6: values[7],
-        q7: values[8]
-      };
+    const payload = {
+      evaluator: values[0],
+      team: values[1],
+      q1: values[2],
+      q2: values[3],
+      q3: values[4],
+      q4: values[5],
+      q5: values[6],
+      q6: values[7],
+      q7: values[8] // ✅ เพิ่มข้อ 7
+    };
 
-      fetch('https://script.google.com/macros/s/AKfycbzXuSBxmB_GrbFhysCB5PhOiqk1SfJreXSHLM91hsiYOTaqKe3h_jGPeinPODrQCmbi/exec', {
-        method: 'POST',
-        body: JSON.stringify(payload),
-        headers: { 'Content-Type': 'application/json' }
-      })
-      .then(response => response.text())
-      .then(result => {
-        alert('ส่งแบบประเมินเรียบร้อยแล้ว ขอบคุณครับ!');
-        form.reset();
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        alert('เกิดข้อผิดพลาดในการส่ง กรุณาลองใหม่');
-      });
+    fetch('https://script.google.com/macros/s/AKfycbzXuSBxmB_GrbFhysCB5PhOiqk1SfJreXSHLM91hsiYOTaqKe3h_jGPeinPODrQCmbi/exec', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => response.text())
+    .then(result => {
+      alert('ส่งแบบประเมินเรียบร้อยแล้ว ขอบคุณครับ!');
+      form.reset();
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('เกิดข้อผิดพลาดในการส่ง กรุณาลองใหม่');
     });
-  </script>
+  });
+</script>
 </body>
 </html>
