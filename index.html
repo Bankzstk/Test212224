@@ -4,55 +4,106 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>360 Feedback Report Tracking</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    .status-complete { color: green; }
-    .status-incomplete { color: orange; }
-    .status-inprogress { color: goldenrod; }
-    table img { width: 40px; border-radius: 50%; }
+    body {
+      font-family: 'Prompt', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .card {
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background-color: #fff;
+    }
+    .status-complete {
+      color: #28a745;
+      font-weight: bold;
+    }
+    .status-incomplete {
+      color: #dc3545;
+      font-weight: bold;
+    }
+    .status-inprogress {
+      color: #ffc107;
+      font-weight: bold;
+    }
+    table img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    table tr:hover {
+      background-color: #f1f1f1;
+    }
+    .table thead {
+      background-color: #007bff;
+      color: white;
+    }
+    .form-select, .form-control {
+      max-width: 400px;
+    }
   </style>
 </head>
 <body class="p-4">
 
-  <h2>360 Feedback Report Tracking</h2>
+  <div class="container">
+    <h2 class="mb-4 text-primary">360 Feedback Report Tracking</h2>
 
-  <label class="my-3">
-    <select class="form-select w-50">
-      <option selected>Period 118 : FLP14.1 Artificial intelligence learning...</option>
-    </select>
-  </label>
+    <label class="mb-3">
+      <select class="form-select">
+        <option selected>Period 118 : FLP14.1 Artificial intelligence learning...</option>
+      </select>
+    </label>
 
-  <div class="row text-center my-3">
-    <div class="col">
-      <div class="card p-2"><strong>All</strong><div id="totalAll">0</div></div>
+    <div class="row text-center g-3 mb-4">
+      <div class="col-md-3 col-sm-6">
+        <div class="card p-3">
+          <strong>All</strong>
+          <div id="totalAll" class="fs-4 text-dark">0</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card p-3">
+          <strong>Complete</strong>
+          <div id="totalComplete" class="fs-4 text-success">0</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card p-3">
+          <strong>Incomplete</strong>
+          <div id="totalIncomplete" class="fs-4 text-danger">0</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card p-3">
+          <strong>Sum Complete %</strong>
+          <div id="percentComplete" class="fs-4 text-primary">0%</div>
+        </div>
+      </div>
     </div>
-    <div class="col">
-      <div class="card p-2"><strong>Complete</strong><div id="totalComplete">0</div></div>
-    </div>
-    <div class="col">
-      <div class="card p-2"><strong>Incomplete</strong><div id="totalIncomplete">0</div></div>
-    </div>
-    <div class="col">
-      <div class="card p-2"><strong>Sum Complete %</strong><div id="percentComplete">0%</div></div>
+
+    <input type="text" id="searchBox" class="form-control mb-4" placeholder="Search...">
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped align-middle">
+        <thead>
+          <tr>
+            <th>Empid</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>NameEn</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody id="memberTable"></tbody>
+      </table>
     </div>
   </div>
-
-  <input type="text" id="searchBox" class="form-control my-3" placeholder="Search...">
-
-  <table class="table table-bordered table-striped">
-    <thead class="table-light">
-      <tr>
-        <th>Empid</th>
-        <th>Image</th>
-        <th>Name</th>
-        <th>NameEn</th>
-        <th>Email</th>
-        <th>Status</th>
-        <th>Link</th>
-      </tr>
-    </thead>
-    <tbody id="memberTable"></tbody>
-  </table>
 
   <script>
     const members = [
@@ -94,7 +145,7 @@
           <td>${m.nameEn}</td>
           <td>${m.email}</td>
           <td class="${m.status === 'Complete' ? 'status-complete' : 'status-incomplete'}">${m.status}</td>
-          <td><a href="#" target="_blank">Link</a></td>
+          <td><a href="#" target="_blank" class="btn btn-sm btn-outline-primary">Link</a></td>
         `;
         tbody.appendChild(tr);
       });
